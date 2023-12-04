@@ -1,0 +1,167 @@
+Resumo do Curso de Programação Orientada a Objetos e Linguagem de Programação Java
+
+-----------------------------------------------------------------------------------------
+Episodio 0 - Parte 1
+	-Introdução à tecnologia Java
+
+JVM
+JRE
+JDK
+JAVA SE
+JAVA EE
+JAVA ME
+JAVA FX
+
+Episodio 0 - Parte 2
+	-	Configuramos o ambiente de Desenvolvimento
+
+Episodio 1
+
+Abstração - Ocultar os detalhes desnecessários para o software.
+
+Classes - Um modelo (template) que incorpora caracteristicas (representadas por atributos/campos/variaveis de instância)
+e funcionalidades (representadas por métodos (funções). Este modelo e usado como base para a criação de n objetos.
+
+Classe é constituída de membros (campos, construtores e metodos).
+
+Objetos- São entidades criadas a partir de classes (processo conhecido com instanciacao). A classe determina a estrutura que os
+objetos em nível de execução  vão compartilhar. Dados especificos estão presntes em cada objeto
+
+Objeto1
+	nome = "Patricia"
+	curso = "Odontologia"
+	
+Objeto2
+	nome = "Adriano"
+	curso = "Educação Física"
+	
+	Aluno objeto1 = new Aluno();
+	Aluno objeto2 = new Aluno();
+	
+Pacotes - Estruturas da linguagem Java que permitem organizar as classes de nossas aplicações e fornecem um mecanismo simples para reuso de classes
+o reuso e conseguido a partir do comando import
+
+import java.util.* // mostro para o compilador a localização de todas as classes do pacote java.util
+
+ou
+
+import java.util.Date // exibo a localização de apenas uma classe
+
+Classes System pertence ao pacote java.lang por default
+
+Recomenda-se sempre criar pacotes para prganizar nossas classes e tornar o reúso possível
+
+Pacotes sõa estruturas hierarquicas escritas em letras minusculas separadas por pontos
+por exemplo br.com.ryan.projetox.visao.relatorios
+
+Existem 3 cenarios básicos para reúso de classes
+	1- Reuso de classes dentro do mesmo projeto
+	2- Reuso de classes da api do Java SE (Classes fornecidas pelo JRE)
+	3- Reuso de classes de terceiros (normalmente incorporadas ao seu porjeto via arquivos com extensão.jar) 
+
+Podemos compilar e redirecionar saída de classes presentes em pacotes, via linha de comando
+
+	-javac -d <diretorioDestino> arquivos.java
+	
+Dica: tanto para compilar quanto para executar classes em pacotes, se posicione na raiz da sua estrutura de pacotes.
+
+Modificadores de Acesso
+
+Existem 4 modificadores de acesso na linguagem java que controlam a acessibilidade de classes e seus membros perantw outros
+objetos de sua aplicação.
+
+São eles: private, public, protected e package-friendly (que é o default e que não precisa ser declarado explicitamente)
+
+private - atributos e métodos definidos com este modificador de acesso só são acessiveis a partir da própria classe que os definiu
+
+public - atributos e metodos, além de classes que são rotuladas com este modificador de acesso, possuem acesso universal a partir de 
+qualquer classe dentro do projeto.
+
+Package-Friendly - este modificador faz com que os memebros declarados com visibilidade de pacote só possam ser acessadas por
+metodos e construtores presentes na mesma classe onde os membros com visibilidade de pacote foram definidos e por outros objetos pertencentes
+ao mesmo pacote. Não conseguimos acessar membros de classes com visibilidade de pacote a partir de outros pacoted do sistema.
+
+Uma classe com visibilidade de pacote só pode ser acessada a partir do mesmo pacote.
+
+protected - discutir mais adiante por dependo do conceito de heranças.
+-------------------------------------------------------------------------
+					Criação de objetos com operador new
+Toda classe tem e pelo menos um construtor que é invocado para a criação de objetos.Por padrão, não precisamos explicitamente
+definir um construtor que não recebe parametros.Omesmo é inserido automaticamente pela linguagem Java.
+
+Os contrutores são diferentes de metodos por não possuirem tipo de retorno e são eles os primeiros membros a serem invocados em uma classe
+no momento de instanciação de objetos com o operador new.
+
+Se vc criar um cosntrutor que recebe algum parametro, voce perde o contrutor default. Nesse caso, havendo necessidade vc deve explicitamente
+escrever o contrutor default (que não recebe parametros).
+--------------------------------------------------------------------------
+					Sintaxe e Layout de um arquivo fone em Java
+
+Sinatxe dos membros e elementos de uma classe Java
+
+Sintaxe de uma classe : <modificador_acesso> class <nome_class>
+Sintaxe de atributos : <modificador_acesso> tipo <nome_atributo> (valor inicial);
+Sintaxe de um construtor : <nome_contrutor>([<lista_argumentos>])
+SIntaxe de um método : (<modificador_acesso>) <tipo_retorno> <nome_metodo> ([<lista_argumentos>])
+Sintaxe de um pacote : <nome_pacote_raiz>[.<nome_subpacote>]
+Sintaxe do import: import <nome_pacote>[.<nome_subpacote>].<nome_classe>
+			       import <nome_pacote>[.<nome_subpacote>].*
+
+Layout de um arquivo fonte em Java
+
+o nome da classe pública indica o nome do arquivo .java
+por exemplo, classe Hospede, arquivo Hospede.java
+
+[<declaracao_pacote>]
+[<declaracao_import>] *
+<declaracao_classes>
+	<declaração_campos> +
+	<declaração_construtores> +
+	<declaração dos metodos> +
+	
+O tipo de retorno de um metodo pode ser qualquer tipo primitivo, tipo de referencia ou void (indicando que o metodo não
+retorna nenhum valor pars o código cliente que o invocou)
+
+Quando um método retorna algum valor para o código para o cliente que o invocou, cabe ao cliente decidir se deve ou nao capturar este retorno
+para uso mais adiante no codigo
+
+Sintaxe basica no codigo cliente
+		<tipoRetorno> <nomeVariavel = <referencia>.<nomeMetodo>([<lista_parametros>]) //metodo retrona valor do tipo <tipoRetorno>
+		
+		exemplo
+		
+		String nome = rodrigo.getNome();
+		
+		double salario = rodrigo.getSalario(); // getSalario retorna um tipo primitivo double
+		
+
+---------------------------------------------------------------------------
+								Comentarios
+Existem 3 tipos de comentarios em Java:
+
+Comentário de uma linha
+
+// este é um comentario de uma linha
+
+/*
+Este é um comentário
+de multiplas linhas
+*/
+
+Comentario especifico para a geração de documentação HTML
+---------------------------------------------------------------------------
+					Tipos primitivos e Tipos de Referencia
+
+ 
+			       
+				   
+
+
+
+
+
+
+
+	
+	
+
